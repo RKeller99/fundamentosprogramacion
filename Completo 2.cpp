@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<string.h>
-#include<windows.h>
+
 char x,y,z,w,r,opc,resp,x1,Leer;
 char letras[5],ordenado[5],N[50],nombre_archivo[50];
 int i,j,k;
@@ -59,7 +59,7 @@ int main()
 							{ordenado[4],'V','W','X','Y','Z'},
 						};
 						printf("Se lee el texto que deseas modificar");	
-						printf("ingresar nombre de archivo (se debe añadir la extensión del archivo si es que existe):");
+						printf("ingresar nombre de archivo (se debe aÃ±adir la extensiÃ³n del archivo si es que existe):");
              			scanf(" %[^\n]",&nombre_archivo);
 						Archivo = fopen(nombre_archivo,"r");
 						while (feof(Archivo)==0)
@@ -83,7 +83,7 @@ int main()
 						printf("\n\n\t\tOPCI%cN NO V%cLIDA, DEBES SELECCIONAR UNA OPCI%cN",224,181,224); 
 					}
 				}
-				printf("\n\n\n\tPara regresar al men%c, oprima una S: ",163); //Termina opción B
+				printf("\n\n\n\tPara regresar al men%c, oprima una S: ",163); //Termina opciÃ³n B
 				scanf("%s", &resp);
 			}
 	fclose(Archivo);	
