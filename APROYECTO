@@ -1,207 +1,413 @@
 #include<stdio.h>
 
+
+
 #include<ctype.h>
+
+
 
 #include<string.h>
 
+
+
 #include<windows.h>
+
 char nombre_archivo[50];
+
 char x,y,z,w,r,opc,resp,x1;
+
 char letras[5],ordenado[5],N[50];
+
 int i,j,k;
+
 FILE *Archivo;
+
 char Leer[];
+
 char mayusleer[];
+
 int c;
+
 int main(){
+
 		printf("\n\t\t\t\t\tBasile Alvarez Andr%cs Jos%c\n\t\t\t\t\tGuzm%cn Mercado Sergio Francisco\n\t\t\t\t\tKeller Ascencio Rodolfo Andr%cs\n\t\t\t\t\tPardo Reyna Anelissa Allizon\n\t\t\t\t\tPulido Rodr%cguez Aramis de Jes%cs",130,130,160,130,161,163);
+
+
 
 		printf("\n\n\t\t\t\t\tFundamentos de Programaci%cn\n\n\t\t\t\t\t\tGrupo: 1101\n\n\t\t\t\t\tM.C. Cintia Quezada Reyes",162);
 
+
+
 		printf("\n\n\t\tIngresa tu nombre: ");	//El usuario ingresa su nombre
 
+
+
 		scanf(" %[^\n]",&N);
+
 		
+
 		resp='s';
 
+
+
 		while((resp=='s')||(resp=='S')){
+
 				
+
 				printf("\nSELECCIONA UNA OPCI%cN: ",224);
+
+
 
 				printf("\n\n\t [A] MODIFICACION%cN DE UN TEXTO ",224);
 
+
+
 				printf("\n\n\t [B] OBTENCI%cN DEL TEXTO ORIGINAL \n\n\t\t\t\t",224);
+
+
 
 				printf("Respuesta: ");
 
+
+
 				scanf("%s",&opc);
+
+
 
 				system("cls");
 
+
+
 				opc=toupper(opc);
+
 				
+
 				if(opc=='A') //Empieza A
 
+
+
 				{
+
+
 
 					printf("\n\n\t\t\t\t %c MODIFICACI%cN DE UN TEXTO %c",174,224,175);
 
+
+
 					printf("\n\n\tProporciona 5 letras del alfabeto\n\t");
+
+
 
 					scanf("%s",letras);
 
+
+
 					//Aqui se ordenan alfabeticamente
+
+
 
 			      	strupr(letras);
 
+
+
 					if((strlen(letras))!=(5))
+
+
 
 			      		{
 
+
+
 			      			printf("Solamente se permiten 5 letras");
+
+
 
 						}
 
+
+
 					else
+
+
 
 						{
 
+
+
 							strcpy(ordenado,letras);
+
+
 
 							for(i = 1; i < 5; i++)
 
+
+
 			                	{
+
+
 
 								for(j=0;j<5-i;j++)
 
+
+
 									{
+
+
 
 										if((ordenado[j])>(ordenado[j+1]))
 
+
+
 			                                {
+
+
 
 			                 					x1=ordenado[j];
 
+
+
 			                 					ordenado[j]=ordenado[j+1];
+
+
 
 			                 					ordenado[j+1]=x1;
 
+
+
 			                 				}
+
+
 
 			                 		}
 
+
+
 								}
 
+
+
 					printf("Tus letras ordenadas son: %s\n",ordenado);
+
 								
+
 						
+
 					char matrizABC[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'};						
+
 					printf("Se lee el texto que deseas modificar\n");
+
 					printf("ingresa el nombre de tu archivo: ");
+
 					scanf(" %[^\n]",&nombre_archivo);
+
 					Archivo = fopen(nombre_archivo,"r");
+
 					if(Archivo==NULL)        {
+
 					
+
 					printf("No existe el archivo");}
+
 						
+
 			        else{
+
 							while (feof(Archivo)==0){
+
 							fgets(Leer,1000,Archivo);
+
 							mayusleer[strlen(Leer)] = strupr(Leer);
+
 							//printf("%d",strlen(leer));
+
 							i =0;
+
 							j=0;
+
 							for(i=0;i<strlen(Leer);i++){
+
 							for(j=0;j<25;j++){									
+
 							if(mayusleer[i]==matrizABC[j]){//SI LEER ES IGUAL A LA MATRIZ, ENTONCES IMPRIME LEER SIN ESPACIOS EN BLANCO
+
 							//printf("%c",matrizABC[j]);
+
 							if(matrizABC[j]=='A'){
+
 								printf("%c%c",ordenado[0],ordenado[0]);
+
 							}
+
 							if(matrizABC[j]=='B'){
-								printf("%c%c",ordenado[1],ordenado[0]);
-							}if(matrizABC[j]=='C'){
-								printf("%c%c",ordenado[2],ordenado[0]);
-							}if(matrizABC[j]=='D'){
-								printf("%c%c",ordenado[3],ordenado[0]);
-							}if(matrizABC[j]=='E'){
-								printf("%c%c",ordenado[4],ordenado[0]);
-							}if(matrizABC[j]=='F'){
+
 								printf("%c%c",ordenado[0],ordenado[1]);
-							}if(matrizABC[j]=='G'){
-								printf("%c%c",ordenado[1],ordenado[1]);
-							}if(matrizABC[j]=='H'){
-								printf("%c%c",ordenado[2],ordenado[1]);
-							}if(matrizABC[j]=='I'){
-								printf("%c%c",ordenado[3],ordenado[1]);
-							}if(matrizABC[j]=='J'){
-								printf("%c%c",ordenado[3],ordenado[1]);
-							}if(matrizABC[j]=='K'){
-								printf("%c%c",ordenado[4],ordenado[1]);
-							}if(matrizABC[j]=='L'){
+
+							}if(matrizABC[j]=='C'){
+
 								printf("%c%c",ordenado[0],ordenado[2]);
-							}if(matrizABC[j]=='M'){
-								printf("%c%c",ordenado[1],ordenado[2]);
-							}if(matrizABC[j]=='N'){
-								printf("%c%c",ordenado[2],ordenado[2]);
-							}if(matrizABC[j]=='Ñ'){
-								printf("%c%c",ordenado[2],ordenado[2]);
-							}if(matrizABC[j]=='O'){
-								printf("%c%c",ordenado[3],ordenado[2]);
-							}if(matrizABC[j]=='P'){
-								printf("%c%c",ordenado[4],ordenado[2]);
-							}if(matrizABC[j]=='Q'){
+
+							}if(matrizABC[j]=='D'){
+
 								printf("%c%c",ordenado[0],ordenado[3]);
-							}if(matrizABC[j]=='R'){
-								printf("%c%c",ordenado[1],ordenado[3]);
-							}if(matrizABC[j]=='S'){
-								printf("%c%c",ordenado[2],ordenado[3]);
-							}if(matrizABC[j]=='T'){
-								printf("%c%c",ordenado[3],ordenado[3]);
-							}if(matrizABC[j]=='U'){
-								printf("%c%c",ordenado[4],ordenado[3]);
-							}if(matrizABC[j]=='V'){
+
+							}if(matrizABC[j]=='E'){
+
 								printf("%c%c",ordenado[0],ordenado[4]);
-							}if(matrizABC[j]=='W'){
+
+							}if(matrizABC[j]=='F'){
+
+								printf("%c%c",ordenado[1],ordenado[0]);
+
+							}if(matrizABC[j]=='G'){
+
+								printf("%c%c",ordenado[1],ordenado[1]);
+
+							}if(matrizABC[j]=='H'){
+
+								printf("%c%c",ordenado[1],ordenado[2]);
+
+							}if(matrizABC[j]=='I'){
+
+								printf("%c%c",ordenado[2],ordenado[1]);
+
+							}if(matrizABC[j]=='J'){
+
+								printf("%c%c",ordenado[1],ordenado[3]);
+
+							}if(matrizABC[j]=='K'){
+
 								printf("%c%c",ordenado[1],ordenado[4]);
-							}
-							if(matrizABC[j]=='X'){
+
+							}if(matrizABC[j]=='L'){
+
+								printf("%c%c",ordenado[2],ordenado[0]);
+
+							}if(matrizABC[j]=='M'){
+
+								printf("%c%c",ordenado[2],ordenado[1]);
+
+							}if(matrizABC[j]=='N'){
+
+								printf("%c%c",ordenado[2],ordenado[2]);
+
+							}if(matrizABC[j]=='Ñ'){
+
+								printf("%c%c",ordenado[2],ordenado[2]);
+
+							}if(matrizABC[j]=='O'){
+
+								printf("%c%c",ordenado[2],ordenado[3]);
+
+							}if(matrizABC[j]=='P'){
+
 								printf("%c%c",ordenado[2],ordenado[4]);
-							}if(matrizABC[j]=='Y'){
+
+							}if(matrizABC[j]=='Q'){
+
+								printf("%c%c",ordenado[3],ordenado[0]);
+
+							}if(matrizABC[j]=='R'){
+
+								printf("%c%c",ordenado[3],ordenado[1]);
+
+							}if(matrizABC[j]=='S'){
+
+								printf("%c%c",ordenado[3],ordenado[2]);
+
+							}if(matrizABC[j]=='T'){
+
+								printf("%c%c",ordenado[3],ordenado[3]);
+
+							}if(matrizABC[j]=='U'){
+
 								printf("%c%c",ordenado[3],ordenado[4]);
+
+							}if(matrizABC[j]=='V'){
+
+								printf("%c%c",ordenado[4],ordenado[3]);
+
+							}if(matrizABC[j]=='W'){
+
+								printf("%c%c",ordenado[4],ordenado[1]);
+
+							}
+
+							if(matrizABC[j]=='X'){
+
+								printf("%c%c",ordenado[4],ordenado[2]);
+
+							}if(matrizABC[j]=='Y'){
+
+								printf("%c%c",ordenado[4],ordenado[3]);
+
 							}if(matrizABC[j]=='Z'){
+
 								printf("%c%c",ordenado[4],ordenado[4]);
+
 							}
+
 														
+
 							}
+
 							}
+
 							}
+
 							}
+
 							fclose(Archivo);}}}
+
 				else
+
+
 
 				{
 
+
+
 					if(opc=='B') //Empieza B
 
+
+
 					{
+
+
 
 						printf("\n\n\t\t\t\t %c OBTENCI%cN DEL TEXTO ORIGINAL %c",174,224,175);
 
+
+
 					}
+
+
 
 					else
 
+
+
 					{
+
+
 
 						printf("\n\n\t\tOPCI%cN NO V%cLIDA, DEBES SELECCIONAR UNA OPCI%cN",224,181,224);
 
+
+
 					}
+
+
 
 				}
 
+
+
 				printf("\n\n\n\tPara regresar al men%c, oprima una S: ",163); //Termina opción B
 
+
+
 				scanf("%s", &resp);}
+
 	
+
 	getchar();getchar();return 0;}
