@@ -177,9 +177,9 @@ int main(){
 
 									{ordenado[0],'A','B','C','D','E'},
 
-									{ordenado[1],'F','G','H','I','K'},
+									{ordenado[1],'F','G','H','IJ','K'},
 
-									{ordenado[2],'L','M','N','O','P'},
+									{ordenado[2],'L','M','NÑ','O','P'},
 
 									{ordenado[3],'Q','R','S','T','U'},
 
