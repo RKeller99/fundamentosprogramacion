@@ -1,0 +1,69 @@
+// ESTE PROGRAMA SOLO ORDENA LAS LETRAS QUE SE INTRODUCEN PERO LAS "ñ´s" LAS TOMA COMO SI FUERAN N´s
+//ALGUIEN SABE COMO PODEMOS PONER PARA QUE SE IMPRIMAN LAS Ñs?????
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+char letras[5];
+char ordenado[5];
+char x1;
+char enie = 164;
+char ENIE = 165;
+int i,j,k;
+int main(){
+	printf("ingrese clave: ");
+	scanf("%s",&letras);
+	strupr(letras);
+	for(i=0;i<strlen(letras);i++){
+		if(enie == letras[i]){
+			letras[i] = 165;
+		}
+		else{
+			letras[i] = letras[i];
+			}
+		}
+	
+	if((strlen(letras))!=(5))
+		{
+			printf("Solamente se permiten 5 letras");
+				}
+					else
+						{
+							for(i=0;i<strlen(letras);i++){
+								if(ENIE == letras[i]){
+									letras[i] = 78;
+								}
+								else{
+									letras[i] = letras[i];
+								}
+							}
+							strcpy(ordenado,letras);
+							for(i = 1; i < 5; i++)
+			                	{
+								for(j=0;j<5-i;j++)
+									{
+										if((ordenado[j])>(ordenado[j+1]))
+			                                {
+			                                	if(ordenado[j] == ENIE){
+			                                		ENIE = 78;
+												}
+												else{
+												
+			                 					x1=ordenado[j];
+			                 					ordenado[j]=ordenado[j+1];
+			                 					ordenado[j+1]=x1;
+			                 				}
+											}
+			                 		}
+								}
+					printf("Tus letras ordenadas son: %s\n",ordenado);
+				}
+			
+	
+//	printf("%s",ordenado);
+	getchar();
+	getchar();
+	return 0;
+}
