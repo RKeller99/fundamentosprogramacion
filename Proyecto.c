@@ -119,12 +119,12 @@ int main()
 					fprintf(archivoRES,"\n");	
 					fclose(archivoRES);
 					while(feof(archivoLEER)==0){
-					fgets(Leer,1000,archivoLEER);
+					fgets(Leer,100,archivoLEER);
 					//fscanf(archivoLEER,"%[^;]",Leer);
 					strupr(Leer);
 					archivoRES = fopen(nombre_archivoRES,"a");
 					//mayusLeer[1000] = strupr(Leer);
-					for(i=0;i<1000;i++)
+					for(i=0;i<100;i++)
 						{
 							for(j=0;j<28;j++)
 							{
@@ -141,131 +141,157 @@ int main()
 									{
 
 										printf("%c%c",y[0],y[1]);
+										fprintf(archivoRES,"%c%c",y[0],y[1]);
 									}
 								if(matrizABC[j]=='C')
 									{
 
 										printf("%c%c",y[0],y[2]);
+										fprintf(archivoRES,"%c%c",y[0],y[2]);
 									}
 								if(matrizABC[j]=='D')
 									{
 
 										printf("%c%c",y[0],y[3]);
+										fprintf(archivoRES,"%c%c",y[0],y[3]);
 									}
 								if(matrizABC[j]=='E')
 									{
 
 										printf("%c%c",y[0],y[4]);
+										fprintf(archivoRES,"%c%c",y[0],y[4]);
 									}
 							    if(matrizABC[j]=='F')
 									{
 
 										printf("%c%c",y[1],y[0]);
+										fprintf(archivoRES,"%c%c",y[1],y[0]);
 									}
 								if(matrizABC[j]=='G')
 									{
 
 										printf("%c%c",y[1],y[1]);
+										fprintf(archivoRES,"%c%c",y[1],y[1]);
 									}
 								if(matrizABC[j]=='H')
 									{
 
 										printf("%c%c",y[1],y[2]);
+										fprintf(archivoRES,"%c%c",y[1],y[2]);
 									}
 								if(matrizABC[j]=='I')
 									{
 
 										printf("%c%c",y[1],y[3]);
+										fprintf(archivoRES,"%c%c",y[1],y[3]);
 									}
 								if(matrizABC[j]=='J')
 									{
 
 										printf("%c%c",y[1],y[3]);
+										fprintf(archivoRES,"%c%c",y[1],y[3]);
 									}
 								if(matrizABC[j]=='K')
 									{
 
 										printf("%c%c",y[1],y[4]);
+										fprintf(archivoRES,"%c%c",y[1],y[4]);
 									}
 								if(matrizABC[j]=='L')
 									{
 
 										printf("%c%c",y[2],y[0]);
+										fprintf(archivoRES,"%c%c",y[2],y[0]);
 									}
 								if(matrizABC[j]=='M')
 									{
 
 										printf("%c%c",y[2],y[1]);
+										fprintf(archivoRES,"%c%c",y[2],y[1]);
 									}
 								if(matrizABC[j]=='N')
 									{
 
 										printf("%c%c",y[2],y[2]);
+										fprintf(archivoRES,"%c%c",y[2],y[2]);
 									}
 								if(matrizABC[j]==165)
 									{
 
 										printf("%c%c",y[2],y[2]);
+										fprintf(archivoRES,"%c%c",y[2],y[2]);
 									}
 								if(matrizABC[j]=='O')
 									{
 
 										printf("%c%c",y[2],y[3]);
+										fprintf(archivoRES,"%c%c",y[2],y[3]);
 									}
 								if(matrizABC[j]=='P')
 									{
 
 										printf("%c%c",y[2],y[4]);
+										fprintf(archivoRES,"%c%c",y[2],y[4]);
 									}
 								if(matrizABC[j]=='Q')
 									{
 
 										printf("%c%c",y[3],y[0]);
+										fprintf(archivoRES,"%c%c",y[3],y[0]);
 									}
 								if(matrizABC[j]=='R')
 									{
 
 										printf("%c%c",y[3],y[1]);
+										fprintf(archivoRES,"%c%c",y[3],y[1]);
 									}
 								if(matrizABC[j]=='S')
 									{
 
 										printf("%c%c",y[3],y[2]);
+										fprintf(archivoRES,"%c%c",y[3],y[2]);
 									}
 								if(matrizABC[j]=='T')
 									{
 
 										printf("%c%c",y[3],y[3]);
+										fprintf(archivoRES,"%c%c",y[3],y[3]);
 									}
 								if(matrizABC[j]=='U')
 									{
 
 										printf("%c%c",y[3],y[4]);
+										fprintf(archivoRES,"%c%c",y[3],y[4]);
 									}
 								if(matrizABC[j]=='V')
 									{
 
 										printf("%c%c",y[4],y[0]);
+										fprintf(archivoRES,"%c%c",y[4],y[0]);
 									}
 								if(matrizABC[j]=='W')
 									{
 
 										printf("%c%c",y[4],y[1]);
+										fprintf(archivoRES,"%c%c",y[4],y[1]);
 									}
 								if(matrizABC[j]=='X')
 									{
 
 										printf("%c%c",y[4],y[2]);
+										fprintf(archivoRES,"%c%c",y[4],y[2]);
 									}
 								if(matrizABC[j]=='Y')
 									{
 
 										printf("%c%c",y[4],y[3]);
+										fprintf(archivoRES,"%c%c",y[4],y[3]);
 									}
 								if(matrizABC[j]=='Z')
 									{
 
 										printf("%c%c",y[4],y[4]);
+										fprintf(archivoRES,"%c%c",y[4],y[4]);
 									}
 								
 							
@@ -276,7 +302,7 @@ int main()
 						}
 					}
 					fclose(archivoLEER);
-					
+					fclose(archivoRES);
 					
 						
 					}
